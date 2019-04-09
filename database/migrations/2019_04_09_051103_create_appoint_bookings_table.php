@@ -17,6 +17,8 @@ class CreateAppointBookingsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('professional_id');
             $table->bigInteger('customer_id');
+            $table->dateTimeTz('start_time_slot_id');
+            $table->dateTimeTz('end_time_slot_id');
             $table->text('message')->nullable();
             $table->timestamps();
         });

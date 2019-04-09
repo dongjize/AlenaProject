@@ -11,6 +11,32 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
-    return view('welcome');
+//    return view('welcome');
+});
+
+// register
+Route::get('/register', 'RegisterController@index');
+Route::post('/register', 'RegisterController@register');
+
+// login
+Route::get('/login', 'LoginController@index');
+Route::post('/login', 'LoginController@login');
+
+Route::group(['middleware' => 'auth:web'], function () {
+    // logout
+    Route::get('/logout', 'LoginController@logout');
+});
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/login', 'Admin\LoginController@index');
+    Route::post('/login', 'Admin\LoginController@login');
+    Route::get('/logout', 'Admin\LoginController@logout');
+
+    Route::group(['middleware' => 'auth:admin'], function () {
+        Route::get('/home', 'Admin\HomeController@index');
+    });
 });

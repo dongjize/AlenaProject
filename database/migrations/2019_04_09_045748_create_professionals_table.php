@@ -17,7 +17,7 @@ class CreateProfessionalsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 100);
             $table->string('email', 100)->unique();
-            $table->enum('type', ['podiatrist', 'naturopath', 'chiropractor']);
+            $table->bigInteger('type_id');
             $table->integer('charge')->default(0);
             $table->timestamps();
         });
