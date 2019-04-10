@@ -19,8 +19,8 @@ class LoginController extends Controller
             'password' => 'required|min:6|max:20',
         ]);
 
-        $user = request(['email', 'password']);
-        if (Auth::guard('admin')->attempt($user)) {
+        $adminUser = request(['email', 'password']);
+        if (Auth::guard('admin')->attempt($adminUser)) {
             return redirect('admin/home');
         }
 

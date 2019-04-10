@@ -2,13 +2,9 @@
 
 namespace App;
 
-class Customer extends Model
-{
-    public function type()
-    {
-        return $this->hasOne(ProfessionalType::class, 'id', 'type_id');
-    }
 
+class Customer extends User
+{
     public function appointmentBookings()
     {
         return $this->hasMany(AppointmentBooking::class);

@@ -28,6 +28,12 @@ Route::post('/login', 'LoginController@login');
 Route::group(['middleware' => 'auth:web'], function () {
     // logout
     Route::get('/logout', 'LoginController@logout');
+
+    // customer settings
+    Route::get('customer/me/settings', 'CustomerController@settings');
+    Route::post('customer/me/settings', 'CustomerController@settingsStore');
+
+    Route::get('appointments', 'AppointmentBookingController@index');
 });
 
 
@@ -38,5 +44,10 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('/home', 'Admin\HomeController@index');
+        Route::get('/professionals', 'ProfessionalController@index');
+        Route::get('/professionals/create', 'ProfessionalController@create');
+        Route::post('/professionals/store', 'ProfessionalController@store');
+        Route::get('/professionals/{professional}', 'ProfessionalController@show');
+        Route::get('appointments', 'AppointmentBookingController@index');
     });
 });

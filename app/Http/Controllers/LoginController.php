@@ -26,7 +26,7 @@ class LoginController extends Controller
         $is_remember = boolval(request('is_remember'));
 
         if (Auth::attempt($customer, $is_remember)) {
-            return redirect('/');
+            return redirect('/customer');
         }
 
         return Redirect::back()->withErrors("Email and password mismatch");

@@ -37,18 +37,18 @@
         <label for="name">Name</label>
         <input type="text" name="name" id="name" class="form-control" placeholder="4-50 Characters" required autofocus>
         <label for="inputEmail">Email</label>
-        <input type="email" name="email" id="inputEmail" class="form-control" required autofocus>
+        <input type="email" name="email" id="inputEmail" class="form-control" required>
         <label for="phone">Phone Number</label>
-        <input type="tel" name="phone" id="phone" class="form-control" required autofocus>
+        <input type="tel" name="phone" id="phone" class="form-control" required>
         <label for="inputPassword">Password</label>
         <input type="password" name="password" id="inputPassword" class="form-control" placeholder="6-20 Characters"
-               required autofocus>
+               required>
         <label>Confirm Password</label>
         <input type="password" name="password_confirmation" class="form-control" placeholder="6-20 Characters"
                required autofocus>
         <label for="address">Home Address</label>
         <input type="text" name="address" id="address" class="form-control" placeholder="Less Than 200 Characters"
-               required autofocus>
+               required>
 
         @include('layout.error')
         <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
