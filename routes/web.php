@@ -44,10 +44,10 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('/home', 'Admin\HomeController@index');
-        Route::get('/professionals', 'ProfessionalController@index');
-        Route::get('/professionals/create', 'ProfessionalController@create');
-        Route::post('/professionals/store', 'ProfessionalController@store');
-        Route::get('/professionals/{professional}', 'ProfessionalController@show');
-        Route::get('appointments', 'AppointmentBookingController@index');
+        Route::get('/professionals', 'Admin\ProfessionalController@index');
+        Route::get('/professionals/create', 'Admin\ProfessionalController@create');
+        Route::post('/professionals/store', 'Admin\ProfessionalController@store');
+        Route::get('/professionals/{professional}', 'Admin\ProfessionalController@show');
+        Route::get('appointments', 'Admin\AppointmentBookingController@index');
     });
 });

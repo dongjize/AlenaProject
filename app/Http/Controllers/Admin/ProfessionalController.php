@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Professional;
+use Illuminate\Support\Facades\Auth;
 
 class ProfessionalController extends Controller
 {
     public function index()
     {
-        $professionals = Professional::all()->orderBy('created_at', 'desc');
-        return view('admin.professional.index', compact('professionals'));
+        $admin = Auth::user();
+        $professionals = Professional::orderBy('created_at', 'desc');
+        return view('admin.professional.index', compact('admin', 'professionals'));
     }
 
     public function show(Professional $professional)
@@ -19,7 +21,8 @@ class ProfessionalController extends Controller
 
     public function create()
     {
-        return view('admin.professional.create');
+        $admin = Auth::user();
+        return view('admin.professional.create', compact('admin'));
     }
 
     public function store()

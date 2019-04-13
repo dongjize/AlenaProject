@@ -5,15 +5,18 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="treeview active">
-                <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>系统管理</span>
+                <a href="/admin/professionals">
+                    <i class="fa fa-dashboard"></i> <span>Professional Management</span>
                     <span class="pull-right-container"></span>
                 </a>
-                <ul class="treeview-menu">
-                    <li><a href="/admin/permissions"><i class="fa fa-circle-o"></i> 权限管理</a></li>
-                    <li><a href="/admin/users"><i class="fa fa-circle-o"></i> 用户管理</a></li>
-                    <li><a href="/admin/roles"><i class="fa fa-circle-o"></i> 角色管理</a></li>
-                </ul>
+                <a href="/admin/appointments">
+                    <i class="fa fa-dashboard"></i> <span>Appointment Management</span>
+                    <span class="pull-right-container"></span>
+                </a>
+                {{--<ul class="treeview-menu">--}}
+                    {{--<li><a href="/admin/professionals"><i class="fa fa-circle-o"></i> Professional Management</a></li>--}}
+                    {{--<li><a href="/admin/appointments"><i class="fa fa-circle-o"></i> Appointment Management</a></li>--}}
+                {{--</ul>--}}
             </li>
 
         </ul>

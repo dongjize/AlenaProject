@@ -46,7 +46,7 @@
         </div>
         @include('layout.error')
         <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-        <a href="/register" class="btn btn-lg btn-primary btn-block" type="submit">Go to register>></a>
+        <a href="/register" class="btn btn-lg btn-primary btn-block" type="submit">Go to register >></a>
     </form>
 
 </div> <!-- /container -->
