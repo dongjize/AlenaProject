@@ -14,13 +14,13 @@ class CustomerController extends Controller
         return view('customer.show', compact('customer'));
     }
 
-    public function settings()
+    public function update()
     {
         $customer = Auth::user();
-        return view('customer.settings', compact('customer'));
+        return view('customer.update', compact('customer'));
     }
 
-    public function settingsStore()
+    public function store()
     {
         $this->validate(request(), [
             'name' => 'required|min:4|max:50',

@@ -15,7 +15,7 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form" action="/admin/professional/store" method="POST">
+                        <form role="form" action="/admin/professionals/store" method="POST">
                             {{csrf_field()}}
                             <div class="box-body">
                                 <div class="form-group">
@@ -38,7 +38,12 @@
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="professionalType">Type</label>
-                                    <select class="form-control" id="professionalType"></select>
+                                    <select name="type_id" class="form-control" id="type_id">
+                                        @foreach($profTypes as $profType)
+                                            <option id="{{$profType->id}}"
+                                                    value="{{$profType->id}}">{{$profType->name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <!-- /.box-body -->

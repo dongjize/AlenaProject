@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Professional;
+use App\ProfessionalType;
 use Illuminate\Support\Facades\Auth;
 
 class ProfessionalController extends Controller
 {
     public function index()
     {
-        $admin = Auth::user();
-        $professionals = Professional::orderBy('created_at', 'desc');
-        return view('admin.professional.index', compact('admin', 'professionals'));
+        $professionals = Professional::orderBy('id')->with('type')->paginate(10);
+        return view('admin.professional.index', compact('professionals'));
     }
 
     public function show(Professional $professional)
@@ -21,8 +21,8 @@ class ProfessionalController extends Controller
 
     public function create()
     {
-        $admin = Auth::user();
-        return view('admin.professional.create', compact('admin'));
+        $profTypes = ProfessionalType::all();
+        return view('admin.professional.create', compact('profTypes'));
     }
 
     public function store()
@@ -31,8 +31,14 @@ class ProfessionalController extends Controller
             'name' => 'required|min:4|max:50|unique:professionals,name',
             'email' => 'required|unique:customers,email|email',
         ]);
-        $params = request(['name', 'email', 'type', 'charge']);
+        $params = request(['name', 'email', 'type_id', 'charge']);
         $professional = Professional::create($params);
         return redirect("admin/professionals");
+    }
+
+    public function delete(Professional $professional)
+    {
+        $professional->delete();
+        return redirect("/admin/professionals");
     }
 }

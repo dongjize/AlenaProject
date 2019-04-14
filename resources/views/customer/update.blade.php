@@ -2,7 +2,7 @@
 
 @section("content")
     <div class="col-sm-8 blog-main">
-        <form class="form-horizontal" action="/customer/me/settings" method="POST" enctype="multipart/form-data">
+        <form class="form-horizontal" action="/customer/update" method="POST" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="form-group">
                 <label class="col-sm-2 control-label">Username</label>

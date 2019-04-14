@@ -1,4 +1,4 @@
-@extends("admin.layout.main")
+@extends("layout.main")
 
 @section("content")
 
@@ -9,9 +9,8 @@
             <div class="col-lg-10 col-xs-6">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Professional List</h3>
+                        <h3 class="box-title">Choose a Professional</h3>
                     </div>
-                    <a type="button" class="btn " href="/admin/professionals/create">Add a Professional</a>
 
                     <div class="box-body">
                         <table class="table table-bordered">
@@ -31,9 +30,7 @@
                                     <td>{{$professional->charge}}</td>
                                     <td>
                                         <a type="button" class="btn btn-success"
-                                           href="/admin/professionals/{{$professional->id}}">View Details</a>
-                                        <a type="button" class="btn btn-danger"
-                                           href="/admin/professionals/{{$professional->id}}/delete">Delete</a>
+                                           href="/appointments/create">View and Choose</a>
                                     </td>
                                 </tr>
                             @endforeach

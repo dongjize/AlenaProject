@@ -30,10 +30,15 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::get('/logout', 'LoginController@logout');
 
     // customer settings
-    Route::get('customer/me/settings', 'CustomerController@settings');
-    Route::post('customer/me/settings', 'CustomerController@settingsStore');
+    Route::get('/customer/update', 'CustomerController@update');
+    Route::post('/customer/update', 'CustomerController@store');
 
-    Route::get('appointments', 'AppointmentBookingController@index');
+    Route::get('/appointments', 'AppointmentBookingController@index');
+    Route::get('/appointments/create', 'AppointmentBookingController@create');
+    Route::post('/appointments/create', 'AppointmentBookingController@store');
+
+    Route::get('/professionals', 'ProfessionalController@index');
+    Route::get('/professionals/{professional}', 'ProfessionalController@show');
 });
 
 
@@ -48,6 +53,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/professionals/create', 'Admin\ProfessionalController@create');
         Route::post('/professionals/store', 'Admin\ProfessionalController@store');
         Route::get('/professionals/{professional}', 'Admin\ProfessionalController@show');
-        Route::get('appointments', 'Admin\AppointmentBookingController@index');
+        Route::get('/professionals/{professional}/delete', 'Admin\ProfessionalController@delete');
+        Route::get('/appointments', 'Admin\AppointmentBookingController@index');
     });
 });
