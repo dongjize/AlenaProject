@@ -12,6 +12,11 @@ class Customer extends Authenticatable
 
     public function appointmentBookings()
     {
-        return $this->hasMany(AppointmentBooking::class);
+        return $this->hasMany(AppointmentBooking::class, 'customer_id', 'id');
+    }
+
+    public function name()
+    {
+        return $this->getAttribute('name');
     }
 }

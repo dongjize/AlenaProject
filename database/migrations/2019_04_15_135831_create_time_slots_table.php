@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOccupiedSlotsTable extends Migration
+class CreateTimeSlotsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateOccupiedSlotsTable extends Migration
      */
     public function up()
     {
-        Schema::create('occupied_slots', function (Blueprint $table) {
+        Schema::create('time_slots', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('professional_id');
-            $table->bigInteger('time_slot_id');
+            $table->dateTimeTz('datetime');
+            $table->boolean('occupied');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateOccupiedSlotsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('occupied_slots');
+        Schema::dropIfExists('time_slots');
     }
 }

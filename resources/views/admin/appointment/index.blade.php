@@ -1,4 +1,4 @@
-@extends("layout.main")
+@extends("admin.layout.main")
 
 @section("content")
 
@@ -9,10 +9,8 @@
             <div class="col-lg-10 col-xs-6">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Professional List</h3>
+                        <h3 class="box-title">Appointment List</h3>
                     </div>
-                    <a type="button" class="btn btn-success" style="margin: 10px" href="/professionals">Book a New
-                        Appointment</a>
 
                     <div class="box-body">
                         <table class="table table-bordered">
@@ -20,6 +18,7 @@
                             <tr>
                                 <th style="width: 20px">ID</th>
                                 <th>Professional</th>
+                                <th>Customer</th>
                                 <th>Start Time</th>
                                 <th>Duration (hrs)</th>
                                 <th>Message</th>
@@ -30,6 +29,7 @@
                                     <td>
                                         <a href="/professionals/{{$appointment->professional->id}}">{{$appointment->professional->name}}</a>
                                     </td>
+                                    <td>{{$appointment->customer->name}}</td>
                                     <td>{{$appointment->startTime()}}</td>
                                     <td>{{$appointment->duration()}}</td>
                                     <td>{{$appointment->message}}</td>

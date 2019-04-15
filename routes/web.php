@@ -34,7 +34,6 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::post('/customer/update', 'CustomerController@store');
 
     Route::get('/appointments', 'AppointmentBookingController@index');
-    Route::get('/appointments/create', 'AppointmentBookingController@create');
     Route::post('/appointments/create', 'AppointmentBookingController@store');
 
     Route::get('/professionals', 'ProfessionalController@index');

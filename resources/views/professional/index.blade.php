@@ -30,7 +30,7 @@
                                     <td>{{$professional->charge}}</td>
                                     <td>
                                         <a type="button" class="btn btn-success"
-                                           href="/appointments/create">View and Choose</a>
+                                           href="/professionals/{{$professional->id}}">View and Choose</a>
                                     </td>
                                 </tr>
                             @endforeach

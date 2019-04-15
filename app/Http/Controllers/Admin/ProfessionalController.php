@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Professional;
 use App\ProfessionalType;
-use Illuminate\Support\Facades\Auth;
 
 class ProfessionalController extends Controller
 {

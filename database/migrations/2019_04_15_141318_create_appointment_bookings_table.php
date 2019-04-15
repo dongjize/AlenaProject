@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTimeSlotsTable extends Migration
+class CreateAppointmentBookingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateTimeSlotsTable extends Migration
      */
     public function up()
     {
-        Schema::create('time_slots', function (Blueprint $table) {
+        Schema::create('appointment_bookings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->dateTimeTz('datetime');
+            $table->bigInteger('professional_id');
+            $table->bigInteger('customer_id');
+            $table->string('time_slot_ids');
+            $table->text('message')->nullable();
             $table->timestamps();
         });
+
     }
 
     /**
@@ -27,6 +31,6 @@ class CreateTimeSlotsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('time_slots');
+        Schema::dropIfExists('appointment_bookings');
     }
 }
