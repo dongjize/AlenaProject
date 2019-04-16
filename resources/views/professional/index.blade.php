@@ -6,12 +6,26 @@
     <section class="content">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="col-lg-10 col-xs-6">
+            <div class="col-lg-10 col-xs-10">
                 <div class="box">
                     <div class="box-header with-border">
                         <h3 class="box-title">Choose a Professional</h3>
                     </div>
+                    {{--<a type="button" class="btn btn-success" style="margin: 10px" href="/professionals">Book a New--}}
+                    {{--Appointment</a>--}}
+                    {{--<div class="form-group">--}}
+                    {{--<label for="professionalType">Type</label>--}}
+                    <div class="row col-lg-6 col-xs-12">
+                        <select name="type_id" class="form-control" id="type_id" style="margin: 10px;">
+                            <option id="" value="">All</option>
+                            @foreach($profTypes as $profType)
+                                <option id="{{$profType->id}}"
+                                        value="{{$profType->id}}">{{$profType->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
+                    {{--</div>--}}
                     <div class="box-body">
                         <table class="table table-bordered">
                             <tbody>

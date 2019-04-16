@@ -5,19 +5,19 @@ namespace App\Http\Controllers;
 
 use App\AppointmentBooking;
 use App\Customer;
+use App\Mail\AppointmentBooked;
 use App\TimeSlot;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class AppointmentBookingController extends Controller
 {
     public function index()
     {
         $customer = Customer::find(Auth::id());
-//        dd($customer->appointmentBookings());
         $appointments = $customer->appointmentBookings()->with('professional')->orderBy('created_at', 'desc')->paginate(10);
         return view('appointment.index', compact('appointments'));
     }
-
 
     public function create()
     {
@@ -48,5 +48,12 @@ class AppointmentBookingController extends Controller
         }
         return redirect('/appointments');
 
+    }
+
+    public function email()
+    {
+        $customer = Customer::find(Auth::id());
+        Mail::to($customer)->send(new AppointmentBooked());
+        return redirect('/appointments');
     }
 }

@@ -9,8 +9,17 @@ class ProfessionalController extends Controller
 {
     public function index()
     {
-        $professionals = Professional::orderBy('id')->with('type')->paginate(10);
-        return view('admin.professional.index', compact('professionals'));
+        $profTypes = ProfessionalType::all();
+        if (request('type_id') != '') {
+            $queryType = request('type_id');
+            $professionals = Professional::where('type_id', $queryType)->orderBy('id')->with('type')->paginate(10);
+        } else {
+            $professionals = Professional::orderBy('id')->with('type')->paginate(10);
+        }
+//        $professionals = Professional::orderBy('id')->with('type')->paginate(10);
+//        return view('admin.professional.index', compact('professionals'));
+        return view('admin.professional.index', compact('profTypes', 'professionals'));
+
     }
 
     public function show(Professional $professional)
@@ -35,9 +44,12 @@ class ProfessionalController extends Controller
         return redirect("admin/professionals");
     }
 
-    public function delete(Professional $professional)
+    public function destroy(Professional $professional)
     {
         $professional->delete();
-        return redirect("/admin/professionals");
+        return [
+            'error' => 0,
+            'msg' => ''
+        ];
     }
 }

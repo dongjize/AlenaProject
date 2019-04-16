@@ -11,7 +11,20 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Professional List</h3>
                     </div>
-                    <a type="button" class="btn " href="/admin/professionals/create">Add a Professional</a>
+                    <div class="row col-lg-10">
+                        <a type="button" class="btn btn-primary" style="margin: 10px;"
+                           href="/admin/professionals/create">Add a Professional</a>
+                    </div>
+
+                    <div class="row col-lg-6 col-xs-12">
+                        <select name="type_id" class="form-control" id="type_id" style="margin: 10px;">
+                            <option id="" value="">All</option>
+                            @foreach($profTypes as $profType)
+                                <option id="{{$profType->id}}"
+                                        value="{{$profType->id}}">{{$profType->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
                     <div class="box-body">
                         <table class="table table-bordered">
@@ -32,8 +45,8 @@
                                     <td>
                                         <a type="button" class="btn btn-success"
                                            href="/admin/professionals/{{$professional->id}}">View Details</a>
-                                        <a type="button" class="btn btn-danger"
-                                           href="/admin/professionals/{{$professional->id}}/delete">Delete</a>
+                                        <a type="button" class="btn btn-danger resource-delete" href="#"
+                                           delete-url="/admin/professionals/{{$professional->id}}">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach

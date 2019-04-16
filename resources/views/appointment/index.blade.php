@@ -9,10 +9,13 @@
             <div class="col-lg-10 col-xs-6">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Professional List</h3>
+                        <h3 class="box-title">Appointment List</h3>
                     </div>
                     <a type="button" class="btn btn-success" style="margin: 10px" href="/professionals">Book a New
                         Appointment</a>
+
+                    {{--<a type="button" class="btn btn-info" style="margin: 10px" href="/appointments/email">Book a New--}}
+                        {{--Appointment</a>--}}
 
                     <div class="box-body">
                         <table class="table table-bordered">

@@ -47,51 +47,24 @@
                         </p>
                         <div class="collapse" id="collapseExample">
 
-                            {{--<div class="card card-body">--}}
-                            {{--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry--}}
-                            {{--richardson ad--}}
-                            {{--squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt--}}
-                            {{--sapiente ea proident. Anim pariatur cliche reprehenderit, enim eiusmod high life--}}
-                            {{--accusamus terry richardson ad--}}
-                            {{--squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt--}}
-                            {{--sapiente ea proident. Anim pariatur cliche reprehenderit, enim eiusmod high life--}}
-                            {{--accusamus terry richardson ad--}}
-                            {{--squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt--}}
-                            {{--sapiente ea proident.--}}
-                            {{--</div>--}}
-
                             <form role="form" action="/appointments/create" method="POST">
                                 {{csrf_field()}}
                                 <div class="box-body">
                                     <div class="form-group">
                                         <label for="message">Date and Time</label>
 
-
-                                        {{--<div class="row">--}}
-                                        {{--<div class='col-sm-6'>--}}
-                                        {{--<div class="form-group">--}}
-                                        {{--<div class='input-group date' id='datetimepicker5'>--}}
-                                        {{--<input type='text' class="form-control"/>--}}
-                                        {{--<span class="input-group-addon">--}}
-                                        {{--<span class="glyphicon glyphicon-calendar"></span>--}}
-                                        {{--</span>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--<script type="text/javascript">--}}
-                                        {{--$(function () {--}}
-                                        {{--$('#datetimepicker5').datetimepicker({--}}
-                                        {{--defaultDate: "11/1/2013",--}}
-                                        {{--disabledDates: [--}}
-                                        {{--moment("12/25/2013"),--}}
-                                        {{--new Date(2013, 11 - 1, 21),--}}
-                                        {{--"11/22/2013 00:53"--}}
-                                        {{--]--}}
-                                        {{--});--}}
-                                        {{--});--}}
-                                        {{--</script>--}}
-                                        {{--</div>--}}
-
+                                        <div class="row">
+                                            <div class='col-sm-6'>
+                                                <div class="form-group">
+                                                    <div class='input-group date' id='datetimepicker5'>
+                                                        <input type='text' class="form-control"/>
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     </div>
 

@@ -31,7 +31,7 @@ $(".post-audit").click(function (event) {
 
 
 $(".resource-delete").click(function (event) {
-    if (confirm("确定执行删除操作么?") === false) {
+    if (confirm("Delete?") === false) {
         return;
     }
 
@@ -50,6 +50,43 @@ $(".resource-delete").click(function (event) {
             }
 
             window.location.reload();
+        },
+        error: function () {
+            alert("error!");
         }
     });
+});
+
+
+$("#type_id").change(function () {
+    var url = "/professionals";
+    $.ajax({
+        url: url,
+        method: "GET",
+        data: {
+            "type_id": $("#type_id").val()
+        },
+        success: function (data) {
+            // console.log($("#type_id").val())
+            window.location.reload();
+        },
+        error: function () {
+            console.log("failure");
+        }
+    });
+});
+
+
+$(function () {
+    $('#datetimepicker5').on('click', function () {
+        alert("haha");
+    })
+    // $('#datetimepicker5').datetimepicker({
+    //     defaultDate: "11/1/2013",
+    //     disabledDates: [
+    //         moment("12/25/2013"),
+    //         new Date(2013, 11 - 1, 21),
+    //         "11/22/2013 00:53"
+    //     ]
+    // });
 });

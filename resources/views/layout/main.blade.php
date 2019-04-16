@@ -23,9 +23,9 @@
     <!-- jvectormap -->
     <link rel="stylesheet" href="/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
     <!-- Date Picker -->
-    <link rel="stylesheet" href="/adminlte/plugins/datepicker/datepicker3.css">
+    <link rel="stylesheet" href="/adminlte/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="/adminlte/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="/adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
@@ -65,23 +65,24 @@
 <!-- Bootstrap 3.3.6 -->
 <script src="/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Sparkline -->
-<script src="/adminlte/plugins/sparkline/jquery.sparkline.min.js"></script>
+<script src="/adminlte/bower_components/jquery-sparkline/dist/jquery.sparkline.js"></script>
 <!-- jvectormap -->
 <script src="/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="/adminlte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 <!-- jQuery Knob Chart -->
-<script src="/adminlte/plugins/knob/jquery.knob.js"></script>
+<script src="/adminlte/bower_components/jquery-knob/js/jquery.knob.js"></script>
 <!-- daterangepicker -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="/adminlte/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="/adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
-<script src="/adminlte/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="/adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
-<script src="/adminlte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="/adminlte/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
 <!-- FastClick -->
-<script src="/adminlte/plugins/fastclick/fastclick.js"></script>
+<script src="/adminlte/bower_components/fastclick/lib/fastclick.js"></script>
 <script src="/js/admin.js"></script>
+
 </body>
 </html>

@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::get('/appointments', 'AppointmentBookingController@index');
     Route::post('/appointments/create', 'AppointmentBookingController@store');
+    Route::get('/appointments/email', 'AppointmentBookingController@email');
 
     Route::get('/professionals', 'ProfessionalController@index');
     Route::get('/professionals/{professional}', 'ProfessionalController@show');
@@ -48,11 +49,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('/home', 'Admin\HomeController@index');
-        Route::get('/professionals', 'Admin\ProfessionalController@index');
-        Route::get('/professionals/create', 'Admin\ProfessionalController@create');
-        Route::post('/professionals/store', 'Admin\ProfessionalController@store');
-        Route::get('/professionals/{professional}', 'Admin\ProfessionalController@show');
-        Route::get('/professionals/{professional}/delete', 'Admin\ProfessionalController@delete');
         Route::get('/appointments', 'Admin\AppointmentBookingController@index');
+        Route::resource('/professionals', 'Admin\ProfessionalController');
     });
 });
