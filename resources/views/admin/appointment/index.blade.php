@@ -27,7 +27,7 @@
                                 <tr>
                                     <td>{{$appointment->id}}</td>
                                     <td>
-                                        <a href="/professionals/{{$appointment->professional->id}}">{{$appointment->professional->name}}</a>
+                                        <a href="/admin/professionals/{{$appointment->professional->id}}">{{$appointment->professional->name}}</a>
                                     </td>
                                     <td>{{$appointment->customer->name}}</td>
                                     <td>{{$appointment->startTime()}}</td>
