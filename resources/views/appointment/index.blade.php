@@ -15,17 +15,18 @@
                         Appointment</a>
 
                     {{--<a type="button" class="btn btn-info" style="margin: 10px" href="/appointments/email">Book a New--}}
-                        {{--Appointment</a>--}}
+                    {{--Appointment</a>--}}
 
                     <div class="box-body">
                         <table class="table table-bordered">
                             <tbody>
                             <tr>
-                                <th style="width: 20px">ID</th>
+                                <th style="width: 20px">Appointment ID</th>
                                 <th>Professional</th>
                                 <th>Start Time</th>
                                 <th>Duration (hrs)</th>
                                 <th>Message</th>
+                                <th>Operation</th>
                             </tr>
                             @foreach($appointments as $appointment)
                                 <tr>
@@ -35,7 +36,11 @@
                                     </td>
                                     <td>{{$appointment->startTime()}}</td>
                                     <td>{{$appointment->duration()}}</td>
-                                    <td>{{$appointment->message}}</td>
+                                    <td>{!! Str::limit($appointment->message, 100, '...') !!}</td>
+                                    <td>
+                                        <a type="button" class="btn btn-info" href="/appointments/{{$appointment->id}}">View</a>
+                                        <a type="button" class="btn btn-danger" href="/professionals">Cancel</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </table>

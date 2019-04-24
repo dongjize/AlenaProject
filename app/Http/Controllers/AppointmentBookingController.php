@@ -19,6 +19,13 @@ class AppointmentBookingController extends Controller
         return view('appointment.index', compact('appointments'));
     }
 
+    public function show(AppointmentBooking $appointment)
+    {
+        AppointmentBooking::with('professional')->get();
+        AppointmentBooking::with('customer')->get();
+        return view('appointment.show', compact('appointment'));
+    }
+
     public function create()
     {
         return view('appointment.create');
@@ -48,6 +55,14 @@ class AppointmentBookingController extends Controller
         }
         return redirect('/appointments');
 
+    }
+
+    public function delete(AppointmentBooking $appointment)
+    {
+        $this->authorize('delete', $appointment);
+        TimeSlot::releaseOccupation($appointment->time_slot_ids);
+        $appointment->delete();
+        return redirect("/appointments");
     }
 
     public function email()
