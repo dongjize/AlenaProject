@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
     <!-- Date Picker -->
     <link rel="stylesheet" href="/adminlte/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css">
+
+    <link rel="stylesheet" href="/css/bootstrap-datetimepicker.min.css">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="/adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
@@ -82,6 +84,11 @@
 <script src="/adminlte/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
 <!-- FastClick -->
 <script src="/adminlte/bower_components/fastclick/lib/fastclick.js"></script>
+
+<script type="text/javascript" src="/adminlte/bower_components/bootstrap/js/transition.js"></script>
+<script type="text/javascript" src="/adminlte/bower_components/bootstrap/js/collapse.js"></script>
+<script src="/js/bootstrap-datetimepicker.js"></script>
+<script src="/js/moment.js"></script>
 <script src="/js/admin.js"></script>
 
 </body>

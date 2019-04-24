@@ -50,23 +50,47 @@
                             <form role="form" action="/appointments/create" method="POST">
                                 {{csrf_field()}}
                                 <div class="box-body">
-                                    <div class="form-group">
-                                        <label for="message">Date and Time</label>
 
-                                        <div class="row">
-                                            <div class='col-sm-6'>
-                                                <div class="form-group">
-                                                    <div class='input-group date' id='datetimepicker5'>
-                                                        <input type='text' class="form-control"/>
-                                                        <span class="input-group-addon">
-                                                            <span class="glyphicon glyphicon-calendar"></span>
-                                                        </span>
-                                                    </div>
+                                    {{--<div class="form-group">--}}
+
+                                    {{--<div class="row">--}}
+                                    {{--<div class='col-sm-6'>--}}
+                                    {{--<div class='input-group date form_date' id='datetimepicker'--}}
+                                    {{--data-date-format="yyyy-mm-dd hh:00" data-link-format="yyyy-mm-dd">--}}
+                                    {{--<input type='text' class="form-control"/>--}}
+                                    {{--<span class="input-group-addon">--}}
+                                    {{--<span class="glyphicon glyphicon-calendar"></span>--}}
+                                    {{--</span>--}}
+                                    {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--</div>--}}
+
+
+                                    <div class="row">
+                                        <div class='col-md-6'>
+                                            <div class="form-group">
+                                                <div class='input-group date' id='datetimepicker6'>
+                                                    <input type='text' class="form-control"/>
+                                                    <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <div class='col-md-6'>
+                                            <div class="form-group">
+                                                <div class='input-group date' id='datetimepicker7'>
+                                                    <input type='text' class="form-control"/>
+                                                    <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    {{--</div>--}}
+
 
                                     <div class="form-group">
                                         <label for="message">Additional Message</label>

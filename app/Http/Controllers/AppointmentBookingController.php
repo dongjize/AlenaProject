@@ -41,12 +41,12 @@ class AppointmentBookingController extends Controller
 
 
         $customer_id = Auth::id();
-//        $professional_id = request('professional_id');
-//        $message = request('message');
-//        $time_slot_ids = request('time_slot_ids');
-        $professional_id = 1;
-        $message = "hahahaha";
-        $time_slot_ids = "3286|3287";
+        $professional_id = request('professional_id');
+        $message = request('message');
+        $time_slot_ids = request('time_slot_ids');
+//        $professional_id = 1;
+//        $message = "hahahaha";
+//        $time_slot_ids = "3286|3287";
 
         $updated = TimeSlot::updateOccupation($time_slot_ids);
         if ($updated) {

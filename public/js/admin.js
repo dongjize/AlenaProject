@@ -77,16 +77,71 @@ $("#type_id").change(function () {
 });
 
 
+// $('#datetimepicker').datetimepicker({
+//     weekStart: 0,
+//     todayBtn: 1,
+//     autoclose: 1,
+//     todayHighlight: 1,
+//     startView: 2,
+//     minView: 1,
+//     forceParse: 0,
+// });
+// $('#datetimepicker').datetimepicker('setStartDate', '2019-01-01');
+// $('#datetimepicker').datetimepicker('setEndDate', '2019-12-31');
+
+
+// $(function () {
+//     var picker1 = $('#datetimepicker1').datetimepicker({
+//         todayBtn: 1,
+//         autoclose: 1,
+//         todayHighlight: 1,
+//         startView: 2,
+//         minView: 1,
+//         forceParse: 0,
+//         format: 'yyyy-mm-dd hh:00',
+//         // locale: moment.locale('zh-cn'),
+//         enabledDates: [
+//             moment("4/23/2019"),
+//             new Date(2019, 11 - 1, 21),
+//             "11/22/2019 00:53"
+//         ]
+//     });
+//     var picker2 = $('#datetimepicker2').datetimepicker({
+//         todayBtn: 1,
+//         autoclose: 1,
+//         todayHighlight: 1,
+//         startView: 1,
+//         minView: 1,
+//         forceParse: 0,
+//         format: 'yyyy-mm-dd hh:00',
+//         // locale: moment.locale('zh-cn')
+//     });
+//     //动态设置最小值
+//     picker1.on('dp.change', function (e) {
+//         picker2.data('DateTimePicker').minDate(e.date);
+//     });
+//     //动态设置最大值
+//     picker2.on('dp.change', function (e) {
+//         picker1.data('DateTimePicker').maxDate(e.date);
+//     });
+// });
+
+
 $(function () {
-    $('#datetimepicker5').on('click', function () {
-        alert("haha");
-    })
-    // $('#datetimepicker5').datetimepicker({
-    //     defaultDate: "11/1/2013",
-    //     disabledDates: [
-    //         moment("12/25/2013"),
-    //         new Date(2013, 11 - 1, 21),
-    //         "11/22/2013 00:53"
-    //     ]
-    // });
+    $('#datetimepicker6').datetimepicker({
+        enabledDates: [
+            moment("4/23/2019"),
+            new Date(2019, 11 - 1, 21),
+            "11/22/2019 00:53"
+        ]
+    });
+    $('#datetimepicker7').datetimepicker({
+        useCurrent: false //Important! See issue #1075
+    });
+    $("#datetimepicker6").on("dp.change", function (e) {
+        $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+    });
+    $("#datetimepicker7").on("dp.change", function (e) {
+        $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+    });
 });
