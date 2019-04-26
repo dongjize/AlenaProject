@@ -24,7 +24,7 @@ class TimeSlotsTableSeeder extends Seeder
 //                Log::debug($time);
                 DB::table('time_slots')->insert([
                     'datetime' => $time,
-                    'occupied' => 0,
+//                    'occupied' => 0,
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ]);

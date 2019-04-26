@@ -15,8 +15,9 @@ class Customer extends Authenticatable
         return $this->hasMany(AppointmentBooking::class, 'customer_id', 'id');
     }
 
-    public function name()
+    public function occupiedTimeSlots()
     {
-        return $this->getAttribute('name');
+        return $this->belongsToMany(TimeSlot::class, 'appointment_bookings', 'customer_id', 'time_slot_id');
     }
+
 }

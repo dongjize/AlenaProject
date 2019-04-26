@@ -16,7 +16,7 @@ class CreateTimeSlotsTable extends Migration
         Schema::create('time_slots', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->dateTimeTz('datetime');
-            $table->boolean('occupied');
+//            $table->boolean('occupied');
             $table->timestamps();
         });
     }

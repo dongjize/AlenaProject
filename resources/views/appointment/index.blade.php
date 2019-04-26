@@ -14,17 +14,14 @@
                     <a type="button" class="btn btn-success" style="margin: 10px" href="/professionals">Book a New
                         Appointment</a>
 
-                    {{--<a type="button" class="btn btn-info" style="margin: 10px" href="/appointments/email">Book a New--}}
-                    {{--Appointment</a>--}}
-
                     <div class="box-body">
                         <table class="table table-bordered">
                             <tbody>
                             <tr>
-                                <th style="width: 20px">Appointment ID</th>
+                                <th style="width: 20px">ID</th>
                                 <th>Professional</th>
-                                <th>Start Time</th>
-                                <th>Duration (hrs)</th>
+                                <th>Date Time</th>
+                                <th>Duration</th>
                                 <th>Message</th>
                                 <th>Operation</th>
                             </tr>
@@ -34,8 +31,8 @@
                                     <td>
                                         <a href="/professionals/{{$appointment->professional->id}}">{{$appointment->professional->name}}</a>
                                     </td>
-                                    <td>{{$appointment->startTime()}}</td>
-                                    <td>{{$appointment->duration()}}</td>
+                                    <td>{{$appointment->timeSlot->datetime}}</td>
+                                    <td>1 hour</td>
                                     <td>{!! Str::limit($appointment->message, 100, '...') !!}</td>
                                     <td>
                                         <a type="button" class="btn btn-info" href="/appointments/{{$appointment->id}}">View</a>

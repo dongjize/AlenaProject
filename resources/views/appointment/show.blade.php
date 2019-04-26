@@ -27,12 +27,12 @@
                                 <td>{{$appointment->customer->name}}</td>
                             </tr>
                             <tr>
-                                <td>Start Time</td>
-                                <td>{{$appointment->startTime()}}</td>
+                                <td>Date Time</td>
+                                <td>{{$appointment->timeSlot->datetime}}</td>
                             </tr>
                             <tr>
                                 <td>Duration</td>
-                                <td>{{$appointment->duration()}} hr(s)</td>
+                                <td>1 hr</td>
                             </tr>
                             <tr>
                                 <td>Message</td>
