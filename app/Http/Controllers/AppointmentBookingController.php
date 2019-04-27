@@ -34,38 +34,33 @@ class AppointmentBookingController extends Controller
 
     public function store()
     {
-
         $this->validate(request(), [
             'professional_id' => 'required|int',
-            'time_slot_id' => 'required|int',
+            'datetime' => 'required|string',
             'message' => 'string|max:500',
         ]);
 
         $customer_id = Auth::id();
         $professional_id = request('professional_id');
-        $time_slot_id = request('time_slot_id');
-//        $time_slot_id = 2;
+        $datetime = request('datetime');
         $message = request('message');
 
-
-
-
-
-
-        if (TimeSlot::occupied($time_slot_id)) {
-            TimeSlot::updateOccupation($time_slot_id);
-            $params = compact('customer_id', 'professional_id', 'time_slot_id', 'message');
-            $appointment = AppointmentBooking::create($params);
-            return redirect('/appointments/email')->with('appointment', $appointment);
+        $time_slot = TimeSlot::where('datetime', $datetime)->first();
+        $time_slot_id = $time_slot->id;
+        if (!TimeSlot::available($time_slot_id, $customer_id, $professional_id)) {
+            return null; // TODO handle occupied
         }
-        // TODO else
+        $params = compact('customer_id', 'professional_id', 'time_slot_id', 'message');
+        $appointment = AppointmentBooking::create($params);
+        return redirect('/appointments/email')->with('appointment', $appointment);
+
+
 
     }
 
     public function delete(AppointmentBooking $appointment)
     {
         $this->authorize('delete', $appointment);
-        TimeSlot::releaseOccupation($appointment->time_slot_id);
         $appointment->delete();
         return redirect("/appointments");
     }

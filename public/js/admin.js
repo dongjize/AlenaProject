@@ -75,34 +75,3 @@ $("#type_id").change(function () {
         }
     });
 });
-
-
-$(function () {
-    var today = new Date();
-    var maxDate = new Date().setMonth(today.getMonth() + 1);
-    $('#datetimepicker').datetimepicker({
-        viewMode: 'days',
-        format: 'YYYY-MM-DD HH:00',
-        minDate: today, // today
-        maxDate: maxDate, // next month
-        enabledHours: [9, 10, 11, 12, 13, 14, 15, 16, 17],
-        disabledHours: [],
-        disabledDates: [],
-        // enabledDates: [
-        //     moment("4/23/2019"),
-        //     new Date(2019, 11 - 1, 21),
-        //     "11/22/2019 00:53"
-        // ]
-    });
-    // $('#datetimepicker2').datetimepicker({
-    //     viewMode: 'days',
-    //     format: 'YYYY-MM-DD HH:00',
-    //     useCurrent: false //Important! See issue #1075
-    // });
-    // $("#datetimepicker1").on("dp.change", function (e) {
-    //     $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
-    // });
-    // $("#datetimepicker2").on("dp.change", function (e) {
-    //     $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
-    // });
-});

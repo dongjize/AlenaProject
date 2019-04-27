@@ -36,7 +36,7 @@
                                     <td>{!! Str::limit($appointment->message, 100, '...') !!}</td>
                                     <td>
                                         <a type="button" class="btn btn-info" href="/appointments/{{$appointment->id}}">View</a>
-                                        <a type="button" class="btn btn-danger" href="/professionals">Cancel</a>
+                                        <a type="button" class="btn btn-danger" href="/appointments/{{$appointment->id}}/delete">Cancel</a>
                                     </td>
                                 </tr>
                             @endforeach

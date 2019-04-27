@@ -37,8 +37,47 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+
+    <!-- jQuery 2.2.3 -->
+    <script src="/adminlte/bower_components/select2/vendor/jquery-2.1.0.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Sparkline -->
+    <script src="/adminlte/bower_components/jquery-sparkline/dist/jquery.sparkline.js"></script>
+    <!-- jvectormap -->
+    <script src="/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="/adminlte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="/adminlte/bower_components/jquery-knob/js/jquery.knob.js"></script>
+    <!-- daterangepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+    <script src="/adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- datepicker -->
+    <script src="/adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <!-- Slimscroll -->
+    <script src="/adminlte/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- FastClick -->
+    <script src="/adminlte/bower_components/fastclick/lib/fastclick.js"></script>
+
+    <script type="text/javascript" src="/adminlte/bower_components/bootstrap/js/transition.js"></script>
+    <script type="text/javascript" src="/adminlte/bower_components/bootstrap/js/collapse.js"></script>
+    <script src="/js/bootstrap-datetimepicker.js"></script>
+    <script src="/js/moment.js"></script>
+    <script src="/js/admin.js"></script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+
+
 <div class="wrapper">
 
 @include("layout.header")
@@ -56,40 +95,6 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery 2.2.3 -->
-<script src="/adminlte/bower_components/select2/vendor/jquery-2.1.0.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.6 -->
-<script src="/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Sparkline -->
-<script src="/adminlte/bower_components/jquery-sparkline/dist/jquery.sparkline.js"></script>
-<!-- jvectormap -->
-<script src="/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="/adminlte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="/adminlte/bower_components/jquery-knob/js/jquery.knob.js"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="/adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="/adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="/adminlte/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
-<!-- FastClick -->
-<script src="/adminlte/bower_components/fastclick/lib/fastclick.js"></script>
-
-<script type="text/javascript" src="/adminlte/bower_components/bootstrap/js/transition.js"></script>
-<script type="text/javascript" src="/adminlte/bower_components/bootstrap/js/collapse.js"></script>
-<script src="/js/bootstrap-datetimepicker.js"></script>
-<script src="/js/moment.js"></script>
-<script src="/js/admin.js"></script>
 
 </body>
 </html>

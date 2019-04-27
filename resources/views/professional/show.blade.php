@@ -56,9 +56,9 @@
                                     <div class="row">
                                         <div class='col-md-6'>
                                             <div class="form-group">
-                                                <label for="message">Date Time</label>
+                                                <label for="message">Choose Date and Time</label>
                                                 <div class='input-group date' id="datetimepicker">
-                                                    <input type='text' class="form-control"/>
+                                                    <input id="datetime" name="datetime" type='text' class="form-control"/>
                                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -66,6 +66,34 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <script>
+                                        var today = new Date();
+                                        var monthLater = new Date().setMonth(today.getMonth() + 1);
+
+                                        var dict = {};
+                                        var dataArr = {!! $available_slots !!};
+                                        $.each(dataArr, function (idx, obj) {
+                                            var datetime = moment(obj["datetime"]);
+                                            if (dict[datetime.format('YYYY-MM-DD')] === undefined) {
+                                                dict[datetime.format('YYYY-MM-DD')] = [];
+                                            }
+                                            dict[datetime.format('YYYY-MM-DD')].push(parseInt(datetime.format('HH')));
+
+                                        });
+
+                                        $("#datetimepicker").datetimepicker({
+                                            viewMode: 'days',
+                                            format: 'YYYY-MM-DD HH:00:00',
+                                            minDate: today, // today
+                                            maxDate: monthLater, // next month
+                                            enabledDates: Object.keys(dict),
+                                        });
+                                        $("#datetimepicker").on("dp.change", function (e) {
+                                            var chosen = e.date.format('YYYY-MM-DD');
+                                            $('#datetimepicker').data("DateTimePicker").enabledHours(dict[chosen]);
+                                        });
+                                    </script>
 
 
                                     <div class="form-group">
