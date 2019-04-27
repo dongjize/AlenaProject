@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\AppointmentBooking;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -11,14 +12,16 @@ class AppointmentBooked extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $appointment;
+
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param AppointmentBooking $appointmentBooking
      */
-    public function __construct()
+    public function __construct(AppointmentBooking $appointmentBooking)
     {
-        //
+        $this->appointment = $appointmentBooking;
     }
 
     /**
@@ -28,6 +31,6 @@ class AppointmentBooked extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.appointmentBooked');
+        return $this->view('emails.appointmentBooked', [$this->appointment]);
     }
 }

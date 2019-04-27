@@ -35,7 +35,8 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::get('/appointments', 'AppointmentBookingController@index');
     Route::post('/appointments/create', 'AppointmentBookingController@store');
-    Route::get('/appointments/email', 'AppointmentBookingController@email');
+    Route::get('/appointments/booked', 'AppointmentBookingController@booked');
+    Route::get('/appointments/cancelled', 'AppointmentBookingController@cancelled');
     Route::get('/appointments/{appointment}', 'AppointmentBookingController@show');
     Route::get('/appointments/{appointment}/delete', 'AppointmentBookingController@delete');
 

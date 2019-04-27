@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\AppointmentBooking;
 use App\Customer;
 use App\Mail\AppointmentBooked;
+use App\Mail\AppointmentCancelled;
 use App\TimeSlot;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -52,9 +53,7 @@ class AppointmentBookingController extends Controller
         }
         $params = compact('customer_id', 'professional_id', 'time_slot_id', 'message');
         $appointment = AppointmentBooking::create($params);
-        return redirect('/appointments/email')->with('appointment', $appointment);
-
-
+        return redirect('/appointments/booked')->with('appointment', $appointment);
 
     }
 
@@ -62,15 +61,22 @@ class AppointmentBookingController extends Controller
     {
         $this->authorize('delete', $appointment);
         $appointment->delete();
-        return redirect("/appointments");
+        return redirect('/appointments/cancelled')->with('appointment', $appointment);
     }
 
-    public function email()
+    public function booked()
     {
         $appointment = Session::get('appointment');
-
         $customer = Customer::find(Auth::id());
-        Mail::to($customer)->send(new AppointmentBooked());
+        Mail::to($customer)->send(new AppointmentBooked($appointment));
         return redirect('appointments/' . $appointment->id);
+    }
+
+    public function cancelled()
+    {
+        $appointment = Session::get('appointment');
+        $customer = Customer::find(Auth::id());
+        Mail::to($customer)->send(new AppointmentCancelled($appointment));
+        return redirect('appointments/');
     }
 }
