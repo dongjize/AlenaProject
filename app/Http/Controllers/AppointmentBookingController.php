@@ -38,7 +38,7 @@ class AppointmentBookingController extends Controller
         $this->validate(request(), [
             'professional_id' => 'required|int',
             'datetime' => 'required|string',
-            'message' => 'string|max:500',
+            'message' => 'nullable|string|max:500',
         ]);
 
         $customer_id = Auth::id();

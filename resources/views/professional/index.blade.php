@@ -11,10 +11,6 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Choose a Professional</h3>
                     </div>
-                    {{--<a type="button" class="btn btn-success" style="margin: 10px" href="/professionals">Book a New--}}
-                    {{--Appointment</a>--}}
-                    {{--<div class="form-group">--}}
-                    {{--<label for="professionalType">Type</label>--}}
                     <div class="row col-lg-6 col-xs-12">
                         <select name="type_id" class="form-control" id="type_id" style="margin: 10px;">
                             <option id="" value="">All</option>
@@ -23,6 +19,26 @@
                                         value="{{$profType->id}}">{{$profType->name}}</option>
                             @endforeach
                         </select>
+
+                        <script>
+                            $("#type_id").change(function () {
+                                var url = "/professionals";
+                                var params = {
+                                    "type_id": $("#type_id").val()
+                                };
+                                $.ajax({
+                                    url: url,
+                                    data: params,
+                                    method: "GET",
+                                    success: function (data) {
+                                        alert($("#type_id").val())
+                                    },
+                                    error: function () {
+                                        console.log("failure");
+                                    }
+                                });
+                            });
+                        </script>
                     </div>
 
                     {{--</div>--}}

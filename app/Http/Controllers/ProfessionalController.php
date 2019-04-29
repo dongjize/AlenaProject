@@ -6,20 +6,19 @@ use App\Customer;
 use App\Professional;
 use App\ProfessionalType;
 use App\TimeSlot;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class ProfessionalController extends Controller
 {
-    public function index()
+    public function index(Request $request, Professional $professionals)
     {
-        $profTypes = ProfessionalType::all();
-        if (request('type_id') != '') {
-            $queryType = request('type_id');
-            $professionals = Professional::where('type_id', $queryType)->orderBy('id')->with('type')->paginate(10);
-        } else {
-            $professionals = Professional::orderBy('id')->with('type')->paginate(10);
+        $query = $professionals->newQuery();
+        if ($request->has('type_id')) {
+            $query->where('type_id', $request->input('type_id'));
         }
+        $professionals = $query->orderBy('id')->with('type')->paginate(10);
+        $profTypes = ProfessionalType::all();
         return view('professional.index', compact('profTypes', 'professionals'));
     }
 

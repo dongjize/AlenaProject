@@ -58,20 +58,4 @@ $(".resource-delete").click(function (event) {
 });
 
 
-$("#type_id").change(function () {
-    var url = "/professionals";
-    $.ajax({
-        url: url,
-        method: "GET",
-        data: {
-            "type_id": $("#type_id").val()
-        },
-        success: function (data) {
-            // console.log($("#type_id").val())
-            window.location.reload();
-        },
-        error: function () {
-            console.log("failure");
-        }
-    });
-});
+
