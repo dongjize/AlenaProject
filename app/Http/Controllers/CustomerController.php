@@ -55,6 +55,6 @@ class CustomerController extends Controller
 
         $customer->save();
 
-        return back();
+        return redirect('appointments/');
     }
 }
