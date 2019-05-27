@@ -13,9 +13,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-//    return view('welcome');
-});
+Route::get('/', 'LoginController@welcome');
 
 // register
 Route::get('/register', 'RegisterController@index');
@@ -26,6 +24,7 @@ Route::get('/login', 'LoginController@index');
 Route::post('/login', 'LoginController@login');
 
 Route::group(['middleware' => 'auth:web'], function () {
+
     // logout
     Route::get('/logout', 'LoginController@logout');
 
@@ -46,6 +45,7 @@ Route::group(['middleware' => 'auth:web'], function () {
 
 
 Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', 'Admin\LoginController@welcome');
     Route::get('/login', 'Admin\LoginController@index');
     Route::post('/login', 'Admin\LoginController@login');
     Route::get('/logout', 'Admin\LoginController@logout');
